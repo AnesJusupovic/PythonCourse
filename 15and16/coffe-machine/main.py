@@ -19,7 +19,7 @@ if __name__ == "__main__":
                 if machine.is_resource_sufficient(menu.find_drink("latte")):
                     machine.make_coffee(menu.find_drink("latte"))
                 else:
-                    print("Not enough ressources")
+                    print("Not enough ressources!")
             elif type == "cappuccino":
                 if machine.is_resource_sufficient(menu.find_drink("cappuccino")):
                     machine.make_coffee(menu.find_drink("cappuccino"))
