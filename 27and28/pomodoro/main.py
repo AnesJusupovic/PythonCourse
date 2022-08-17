@@ -6,24 +6,26 @@ def start():
 
 
 def update(second, round):
+    new_second = second
     if round == 5:
         print("Finished")
         exit()
-    if second % 1500:
+    if second % 1500 == 0:
         round += 1
         pause(0)
-        update(0, round)
-    second += 1
+        new_second = 0
+    new_second += 1
     if second % 60 == 0:
         canvas.itemconfig(my_text, text=f"{second / 60}:00")
     elif second % 60 != 0:
         min = int((second - second % 60) / 60)
         canvas.itemconfig(my_text, text=f"{int(min)}:{second % 60}")
-    window.after(1000, update, second, round)
+    window.after(1000, update, new_second, round)
 
 
 def pause(second):
     if second == 300:
+        print("Passes Test")
         pass
     else:
         second += 1
