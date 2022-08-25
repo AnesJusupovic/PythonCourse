@@ -3,10 +3,11 @@ import os
 from twilio.rest import Client
 
 if __name__ == "__main__":
-    from twilio.rest import Client
 
-    account_sid = 'AC666630fea38b8215ffa737249ac32e8d'
-    auth_token = 'd8fe3254611108f3e35b96c54f234fe6'
+    account_sid = os.environ.get("ASID")
+    auth_token = os.environ.get("ATOKEN")
+    print(account_sid)
+    print(auth_token)
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
